@@ -78,7 +78,7 @@ $bordes = array(
     ),
 );
 
-//Array de estilos para los n&uacute;meros 
+//Array de estilos para los n&uacute;meros
 $estilos_numeros = array(
     'font' => array(
         'bold' => false,
@@ -168,7 +168,7 @@ foreach ($contratos as $contrato) {
         ->setCellValue('O'.$fila, $contrato->Estado);
 
     //Se definen los estilos para las celdas que llevarán el contenido
-    
+
     $objPHPExcel->getActiveSheet()->getStyle("I{$fila}")->applyFromArray($estilos_numeros)->getNumberFormat()->setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_CURRENCY_USD);
     $objPHPExcel->getActiveSheet()->getStyle("K{$fila}")->applyFromArray($estilos_numeros)->getNumberFormat()->setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_CURRENCY_USD);
     $objPHPExcel->getActiveSheet()->getStyle("L{$fila}")->applyFromArray($estilos_numeros)->getNumberFormat()->setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_CURRENCY_USD);
@@ -195,7 +195,7 @@ $objPHPExcel->getActiveSheet()->getHeaderFooter()->setOddFooter('&L&B' .$objPHPE
 $nombre = str_replace(' ', '_', $nombre);
 
 //Título de la hoja
-$objPHPExcel->getActiveSheet()->setTitle($nombre);
+$objPHPExcel->getActiveSheet()->setTitle(substr($nombre, 0, 30));
 
 //Se modifican los encabezados del HTTP para indicar que se envia un archivo de Excel.
 header('Cache-Control: max-age=0');

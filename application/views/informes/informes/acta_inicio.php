@@ -14,10 +14,10 @@ $PHPWord = new PHPWord();
 $PHPWord->setDefaultFontName('Arial');
 $PHPWord->setDefaultFontSize(11);
 $properties = $PHPWord->getProperties();
-$properties->setCreator('John Arley Cano Salinas');
+$properties->setCreator('John Arley Cano Salinas'); 
 $properties->setCompany('Hatovial S.A.S.');
 $properties->setTitle('Acta de inicio');
-$properties->setDescription('Acta de inicio de obra');
+$properties->setDescription('Acta de inicio de obra'); 
 $properties->setCategory('informe');
 $properties->setLastModifiedBy('John Arley Cano Salinas');
 
@@ -46,7 +46,7 @@ $PHPWord->addFontStyle('parrafo2', array( 'name'=>'Arial', 'size'=> 8, 'color'=>
 $tabla1 =array('borderColor'=>'000000', 'borderSize'=> 6);
 $tabla2 = array('borderSize' => 8, 'borderColor' => '1E1E1E',  'cellMarginTop' => 100, 'rules' => 'cols');
 $tabla3 = array('cellMarginTop' => 50, 'rules' => 'cols');
-$tabla4 = array(    'borderRightSize' => 50, 'borderBottomColor' => '009900',    'borderBottomSize' => 50, 'borderRightColor' => '00CCFF',    'borderTopSize' => 50, 'borderTopColor' => '00CCFF',    'borderLeftSize' => 50, 'borderLeftColor' => '00CCFF');
+$tabla4 = array(    'borderRightSize' => 50, 'borderBottomColor' => '009900',    'borderBottomSize' => 50, 'borderRightColor' => '00CCFF',    'borderTopSize' => 50, 'borderTopColor' => '00CCFF',    'borderLeftSize' => 50, 'borderLeftColor' => '00CCFF'); 
 
 /**
  * Estilos de celdas
@@ -65,7 +65,7 @@ $PHPWord->addTableStyle('tabla1', $tabla1);
 $cabecera = $seccion1->createHeader();
 $table = $cabecera->addTable('tabla1');
 $table->addRow(1300);
-$table->addCell(4000, $styleCell)->addText('COCAN 900.193.471-9', 'titulo1', $alineacion_centrada);
+$table->addCell(4000, $styleCell)->addText('COCAN 900.133.471-9', 'titulo1', $alineacion_centrada);
 $table->addCell(10000, $styleCell)->addText('ACTA DE INICIO DE OBRA', 'titulo2', $alineacion_centrada);
 $cabecera->addTextBreak();
 
@@ -97,7 +97,7 @@ foreach ($contratos as $contrato):
 	$seccion1->addText(utf8_decode($contrato->Objeto), 'parrafo2', $alineacion_justificada);
 	$seccion1->addTextBreak();
 
-	// Condiciones contractuales
+	// Condiciones contractuales	
 	$seccion1->addText('CONDICIONES CONTRACTUALES', 'parrafo1', $alineacion_centrada);
 
 	// Fecha de inicio
